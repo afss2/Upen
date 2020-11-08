@@ -30,4 +30,10 @@ export class FuncionarioService {
     
         }
 
+    deletarFuncionario(func: Funcionario): Observable<any> {
+        return this.http.delete<any>(this.servURL + "/funcionarios/" + func.cpf, {headers: this.headers}).pipe(
+          retry(2)
+        );
+      }
+
 }

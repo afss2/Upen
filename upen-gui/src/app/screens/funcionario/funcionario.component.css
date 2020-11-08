@@ -107,3 +107,23 @@ body {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
+/* Botão de remoção de funcionário*/
+
+#removebRow {
+    padding: 0;
+    margin: 0;
+    height: 15px;
+    width: 15px;
+}
+
+#removeButton {
+    border: none;
+    background-color: salmon;
+}
+
+#trashImg {
+    width: 15px;
+    height: 15px;
+}
+
+/* */
