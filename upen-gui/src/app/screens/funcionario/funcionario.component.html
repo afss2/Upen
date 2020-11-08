@@ -17,6 +17,17 @@
 
     <div class="listFuncionarios">
         <div class="tableFuncionarios">
+            <table>
+                    <tr *ngFor="let f of funcL">
+                        <div class="blockList">
+                        <td>{{f.nome}}</td>
+                        <td>{{f.cpf}}</td>
+                        <td>{{f.telefone}}</td>
+                        <td>{{f.funcao}}</td>
+                        <td>{{f.numVeiculos}}</td>
+                        </div>
+                    </tr>
+            </table>
             
         </div>
         
