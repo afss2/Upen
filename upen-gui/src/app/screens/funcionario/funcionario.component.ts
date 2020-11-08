@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Funcionario } from '../../../../../common/funcionario'
 import { FuncionarioService } from '../../services/FuncionarioService/funcionario.service'
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { DialogCadastro } from './dialog-cadastro.component';
 
 @Component({
   selector: 'app-funcionario',
@@ -8,11 +10,12 @@ import { FuncionarioService } from '../../services/FuncionarioService/funcionari
   styleUrls: ['./funcionario.component.css']
 })
 export class FuncionarioComponent implements OnInit {
+
   funcionario: Funcionario = new Funcionario;
   funcL: Funcionario[] = [];
   cpfduplicado: boolean = false;
 
-  constructor(private funcService: FuncionarioService) { }
+  constructor(private funcService: FuncionarioService, public dialog: MatDialog) { }
 
   criarFuncionario(func: Funcionario) {
       this.funcService.criarFuncionario(func).subscribe (
@@ -34,5 +37,14 @@ export class FuncionarioComponent implements OnInit {
     )
   }
 
+  CadastroDialogRef: MatDialogRef<DialogCadastro>
+
+  openDialog() {
+    this.CadastroDialogRef = this.dialog.open(DialogCadastro);
+
+    this.CadastroDialogRef.afterClosed().subscribe(result => this.criarFuncionario(result))
+                     
+  }
+  
 
 }
