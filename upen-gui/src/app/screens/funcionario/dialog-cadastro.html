@@ -27,7 +27,7 @@
         </p>
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button mat-button type="submit">Cadastrar</button>
+        <button [disabled]= "form.invalid" mat-button type="submit">Cadastrar</button>
         <button mat-button type="button" mat-dialog-close>Cancelar</button>
     </mat-dialog-actions>
 </form>
