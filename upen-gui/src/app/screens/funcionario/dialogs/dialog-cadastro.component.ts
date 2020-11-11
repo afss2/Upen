@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Funcionario } from '../../../../../common/funcionario'
+import { Funcionario } from '../../../../../../common/funcionario'
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 
@@ -49,11 +49,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms'
                     Validators.pattern('^[0-9]*$')
                 ])
             ],
-                veiculos: ''
+                veiculos: [[]]
             })
         }
     
         submit(form) {
-            this.dialogRef.close(this.form.value);
+            if (!this.form.invalid) { this.dialogRef.close(this.form.value); }
+            else { this.dialogRef.close(null)}
+            
         }
   }

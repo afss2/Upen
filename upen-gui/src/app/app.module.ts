@@ -16,7 +16,8 @@ import { FuncionarioComponent } from './screens/funcionario/funcionario.componen
 import { ListaVeiculoComponent } from './screens/lista-veiculo/lista-veiculo.component';
 import { PneuElementoComponent } from './screens/pneu-elemento/pneu-elemento.component';
 import { VeiculoElementoComponent } from './screens/veiculo-elemento/veiculo-elemento.component';
-import { DialogCadastro } from './screens/funcionario/dialog-cadastro.component'
+import { DialogCadastro } from './screens/funcionario/dialogs/dialog-cadastro.component'
+import { DialogAtribuir } from './screens/funcionario/dialogs/dialog-atribuir.component'
 
 // servicos
 import { HistoricoService } from './services/HistoricoService/historico.service';
@@ -25,7 +26,6 @@ import { ListaPneusService } from './services/ListaPneuService/lista-pneus.servi
 import { ListaVeiculoService } from './services/ListaVeiculoService/lista-veiculo.service';
 import { PneuElementoService  } from './services/PneuElementoService/pneu-elemento.service';
 import { VeiculoElementoService } from './services/VeiculoElementoService/veiculo-elemento.service'
-
 
 
 
@@ -40,7 +40,8 @@ import { VeiculoElementoService } from './services/VeiculoElementoService/veicul
     DashBoardComponent,
     DashBoardDetailComponent,
     ListaPneusComponent,
-    DialogCadastro
+    DialogCadastro,
+    DialogAtribuir
   ],
   imports: [
     BrowserModule,
